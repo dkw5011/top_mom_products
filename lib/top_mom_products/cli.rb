@@ -1,4 +1,4 @@
-class TopMomProduct::CLI
+class TopMomProducts::CLI
   def call 
     puts "Welcome to 2019 top mommy products!!!"
     get_products
