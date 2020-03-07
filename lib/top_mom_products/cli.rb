@@ -6,7 +6,7 @@ class TopMomProducts::CLI
   end
   
   def get_products
-    @products = ["highchair", "stroller", "baby carrier", "baby swing"]
+    @products = TopMomProducts::Product.all
 end
 
 def list_products
