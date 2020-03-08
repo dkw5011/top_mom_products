@@ -12,7 +12,7 @@ end
 def list_products
   puts "Please select a product by number to get more information."
   @products.each.with_index(1) do |product, index|
-    puts "#{index}. #{product}"
+    puts "#{index}. #{product.name}"
   end
 end
 
