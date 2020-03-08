@@ -8,6 +8,7 @@ class TopMomProducts::Product
   end
   
   def self.all
+    TopMomProducts::Scraper.product_scraper if @@all.empty?
     @@all
   end
   
