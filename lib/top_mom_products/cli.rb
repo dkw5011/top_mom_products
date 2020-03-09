@@ -3,6 +3,7 @@ class TopMomProducts::CLI
     puts "Welcome to 2019 top mommy products!!!"
     get_products
     list_products
+    get_user_pick
   end
   
   def get_products
@@ -16,5 +17,18 @@ def list_products
   end
 end
 
+def get_user_pick
+  selection = gets.strip.to_i
+  show_detail_for(selection) if valid_input(selection, @products)
+end
 
+def valid_input(input, data)
+  input.to_i <= data.length && input.to_i > 0
+ end
+ 
+ def show_detail_for(selection)
+   product = @products[selection - 1]
+   puts "Here are the details for your #{product.name}"
+ end
+ 
 end
