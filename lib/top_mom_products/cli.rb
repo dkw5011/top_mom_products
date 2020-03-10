@@ -19,7 +19,13 @@ end
 
 def get_user_pick
   selection = gets.strip.to_i
-  show_detail_for(selection) if valid_input(selection, @products)
+  if valid_input(selection, @products)
+  show_detail_for(selection)
+else
+  puts "Invalid number"
+  list_products
+  get_user_pick
+end
 end
 
 def valid_input(input, data)
