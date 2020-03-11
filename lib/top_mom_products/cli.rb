@@ -2,6 +2,7 @@ class TopMomProducts::CLI
   def call 
     puts "Welcome to 2019 top mommy products!!!"
     get_products
+    get_details
     list_products
     get_user_pick
   end
@@ -44,7 +45,7 @@ def valid_input(input, data)
  
  def show_summary_for(selection)
    detail = @details[selection - 1]
-   puts detail
+   puts detail.name
  end
  
 end

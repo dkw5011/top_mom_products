@@ -13,7 +13,8 @@ class TopMomProducts::Scraper
 end
 
 def self.details_scraper
- details = page.css("div.mtl")
+  page = Nokogiri::HTML(open("https://www.babylist.com/hello-baby/best-baby-products"))
+ details = page.css("div .mtl")
  details.each do |d|
    name = d.text
    TopMomProducts::Detail.new(name)
