@@ -16,7 +16,7 @@ def self.details_scraper
  details = page.css("div.mtl")
  details.each do |d|
    name = d.text
-   TopMomProducts::Deal.new(name)
+   TopMomProducts::Detail.new(name)
  end
  end
    

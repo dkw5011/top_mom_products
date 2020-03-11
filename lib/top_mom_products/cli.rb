@@ -25,6 +25,7 @@ def get_user_pick
   selection = gets.strip.to_i
   if valid_input(selection, @products)
   show_detail_for(selection)
+  show_summary_for(selection)
 else
   puts "Invalid number"
   list_products
@@ -38,9 +39,12 @@ def valid_input(input, data)
  
  def show_detail_for(selection)
    product = @products[selection - 1]
-   detail = @details[selection - 1]
    puts "Here are the details for your #{product.name}"
  end
  
+ def show_summary_for(selection)
+   detail = @details[selection - 1]
+   puts detail
+ end
  
 end
