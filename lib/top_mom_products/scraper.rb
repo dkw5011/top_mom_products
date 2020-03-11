@@ -5,15 +5,21 @@ class TopMomProducts::Scraper
     products = page.css(".product-title")
     
     #details = page.css(".mtl p")[0].text
-    binding.pry
+    
     products.each do |p|
       name = p.text
       TopMomProducts::Product.new(name)
     end
 end
 
-#def self.details_scraper
- # details = page.css("div.mtl")
+def self.details_scraper
+ details = page.css("div.mtl")
+ details.each do |d|
+   name = d.text
+   TopMomProducts::Deal.new(name)
+ end
+ end
+   
 #end
 
 end

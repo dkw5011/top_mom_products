@@ -10,6 +10,10 @@ class TopMomProducts::CLI
     @products = TopMomProducts::Product.all
 end
 
+def get_details
+  @details = TopMomProducts::Detail.all
+end
+
 def list_products
   puts "Please select a product by number to get more information."
   @products.each.with_index(1) do |product, index|
@@ -34,7 +38,9 @@ def valid_input(input, data)
  
  def show_detail_for(selection)
    product = @products[selection - 1]
+   detail = @details[selection - 1]
    puts "Here are the details for your #{product.name}"
  end
+ 
  
 end
