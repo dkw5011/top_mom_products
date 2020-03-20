@@ -1,6 +1,6 @@
 class TopMomProducts::CLI
   def call 
-    puts "Welcome to 2019 top mommy products!!!"
+    puts "Welcome to 2019 top mommy products!!!".blue
     get_products
     get_details
     list_products
@@ -17,7 +17,7 @@ def get_details
 end
 
 def list_products
-  puts "Please select a product by number to get more information."
+  puts "Please select a product by number to get more information.".blue
   @products.each.with_index(1) do |product, index|
     puts "#{index}. #{product.name}"
   end
@@ -51,15 +51,15 @@ def valid_input(input, data)
  
  def second_selection
    
-   puts "Would you like to select another product to receive information on? Type Y"
-   puts "Would you like to exit the program? Type X"
+   puts "Would you like to select another product to receive information on? Type Y".yellow
+   puts "Would you like to exit the program? Type X".yellow
    get_input = gets.strip.upcase
    if get_input == "Y"
      call
    elsif get_input == "X"
-   puts "Thank you for visiting the Top Mom Products Program! Come back again!"
+   puts "Thank you for visiting the Top Mom Products Program! Come back again!".green
  else
-   puts "Invalid Input"
+   puts "Invalid Input".red
    second_selection
  end
  end

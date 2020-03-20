@@ -7,6 +7,7 @@ require_relative "top_mom_products/details"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module TopMomProducts
   class Error < StandardError; end
