@@ -5,6 +5,7 @@ class TopMomProducts::CLI
     get_details
     list_products
     get_user_pick
+    second_selection
   end
   
   def get_products
@@ -48,4 +49,18 @@ def valid_input(input, data)
    puts detail.name
  end
  
+ def second_selection
+   
+   puts "Would you like to select another product to receive information on? Type Y"
+   puts "Would you like to exit the program? Type X"
+   get_input = gets.strip.upcase
+   if get_input == "Y"
+     call
+   elsif get_input == "X"
+   puts "Thank you for visiting the Top Mom Products Program! Come back again!"
+ else
+   puts "Invalid Input"
+   second_selection
+ end
+ end
 end
