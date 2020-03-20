@@ -3,6 +3,7 @@ class TopMomProducts::CLI
     puts "Welcome to 2019 top mommy products!!!".blue
     get_products
     get_details
+    get_prices
     list_products
     get_user_pick
     second_selection
@@ -14,6 +15,10 @@ end
 
 def get_details
   @details = TopMomProducts::Detail.all
+end
+
+def get_prices
+  @prices = TopMomProducts::Prices.all
 end
 
 def list_products
@@ -41,16 +46,17 @@ def valid_input(input, data)
  
  def show_detail_for(selection)
    product = @products[selection - 1]
-   puts "Here are the details for your #{product.name}"
+   puts "Here are the details for your #{product.name}.".green
  end
  
  def show_summary_for(selection)
    detail = @details[selection - 1]
-   puts detail.name
+   price = @prices[selection - 1]
+   puts price.name.yellow
+   puts detail.name.green
  end
  
  def second_selection
-   
    puts "Would you like to select another product to receive information on? Type Y".yellow
    puts "Would you like to exit the program? Type X".yellow
    get_input = gets.strip.upcase
