@@ -1,8 +1,6 @@
 # TopMomProducts
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top_mom_products`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem TopMomProducts is a program that welcomes the user in the beginning. The program then scrapes data from a website that has the best baby products of 2020 and lists them out. From there the user is asked to select a product from the list by number to get more information on the item which will be a description and the price of the item. Once they make their selection they will be asked if they would like to select another product to receive more information on or if they would like to exit the program.
 
 ## Installation
 
