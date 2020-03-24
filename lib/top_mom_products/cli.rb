@@ -2,24 +2,24 @@ class TopMomProducts::CLI
   def call 
     puts "Welcome to 2019 top mommy products!!!".blue
     get_products
-    get_details
-    get_prices
+    # get_details
+    # get_prices
     list_products
     get_user_pick
     second_selection
   end
   
   def get_products
-    @products = TopMomProducts::Product.all
+    @products = TopMomProducts::Product.all.sort_by{ |product| product.name.upcase}
 end
 
-def get_details
-  @details = TopMomProducts::Detail.all
-end
+# def get_details
+#   @details = TopMomProducts::Detail.all
+# end
 
-def get_prices
-  @prices = TopMomProducts::Prices.all
-end
+# def get_prices
+#   @prices = TopMomProducts::Prices.all
+# end
 
 def list_products
   puts "Please select a product by number to get more information.".blue
@@ -32,7 +32,7 @@ def get_user_pick
   selection = gets.strip.to_i
   if valid_input(selection, @products)
   show_detail_for(selection)
-  show_summary_for(selection)
+  
 else
   puts "Invalid number"
   list_products
@@ -46,15 +46,18 @@ def valid_input(input, data)
  
  def show_detail_for(selection)
    product = @products[selection - 1]
+   
    puts "Here are the details for your #{product.name}.".green
+   puts product.price.yellow
+   puts product.detail.green
  end
  
- def show_summary_for(selection)
-   detail = @details[selection - 1]
-   price = @prices[selection - 1]
-   puts price.name.yellow
-   puts detail.name.green
- end
+ #def show_summary_for(selection)
+  # detail = @details[selection - 1]
+#   price = @prices[selection - 1]
+#   puts price.name.yellow
+#   puts detail.name.green
+# end
  
  def second_selection
    puts "Would you like to select another product to receive information on? Type Y".yellow
